@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char emp1[50], emp2[50], emp3[50], fullname[100];
+    int length;
+
+    // Input employee names
+    printf("Enter the first employee's name: ");
+    gets(emp1);
+
+    printf("Enter the second employee's name: ");
+    gets(emp2);
+
+    // 1. strlen() - length of first employee name
+    length = strlen(emp1);
+    printf("\nLength of the first employee's name (%s): %d\n", emp1, length);
+
+    // 2. strcmp() - compare employee names
+    if (strcmp(emp1, emp2) == 0)
+        printf("\nBoth employees have the same name.\n");
+    else
+        printf("\nThe employee names are different.\n");
+
+    // 3. strcpy() - copy first employee name to emp3
+    strcpy(emp3, emp1);
+printf(" Copied the first employee's name to emp3: %s\n",emp3);
+strcpy(fullName,"");
+strcat(fullName,"");
+strcat(fullName,emp2);
+printf(" concatenated employee names : %s",fullName);
+return 0;
+}
+
+
+Enter the first employee's name: John
+Enter the second employee's name: Alice
+
+Length of the first employee's name (John): 4
+The employee names are different.
+Copied the first employee's name to emp3: John
+Concatenated employee names: John Alice
