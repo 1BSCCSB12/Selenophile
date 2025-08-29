@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main()
+{
+    float item1_price, item2_price, total_price, discount = 0.0;
+    int has_discount = 0, is_eligible_for_free_shipping;
+
+    // Step 1: Input prices of two items
+    printf("Enter the price of item 1: ");
+    scanf("%f", &item1_price);
+
+    printf("Enter the price of item 2: ");
+    scanf("%f", &item2_price);
+
+    // Step 2: Use arithmetic operators to calculate total price
+    total_price = item1_price + item2_price;
+    printf("Total price before discount: %.2f\n", total_price);
+
+    // Step 3: Apply discount if total price > 100 (10% discount)
+    if (total_price > 100)
+    {
+        discount = 0.1 * total_price;   // 10% discount
+        total_price -= discount;
+        has_discount = 1;
+    }
+    else
+    {
+        has_discount = 0;
+    }
+
+    // Step 4: Check eligibility for free shipping (if total > 50)
+    is_eligible_for_free_shipping = (total_price > 50);
+
+    // Step 5: Output final details
+    printf("Final total after discount (if applicable): %.2f\n", total_price);
+
+    if (has_discount)
+        printf("A discount of %.2f was applied.\n", discount);
+    else
+        printf("No discount applied.\n");
+
+    if (is_eligible_for_free_shipping)
+        printf("Congratulations! You qualify for free shipping.\n");
+    else
+        printf("Shipping charges apply as the total is less than 50.\n");
+
+    return 0;
+}
